@@ -1,12 +1,12 @@
 ### Root route
-GET http://localhost:8080/
+GET http://localhost:3000/
 
 ### Get all contacts
-GET http://localhost:8080/contacts
+GET http://localhost:3000/contacts
 
 ### Get single contact by id query parameter
 # Replace CONTACT_ID with a real _id from MongoDB
-GET http://localhost:8080/contacts/single?id=CONTACT_ID
+GET http://localhost:3000/contacts/single?id=CONTACT_ID
 
 ### Render root route (replace with your Render URL)
 GET https://your-render-app.onrender.com/

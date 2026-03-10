@@ -5,14 +5,13 @@ const getAll = async (req, res) => {
   try {
     const result = await mongodb.getDb().collection('contacts').find();
     const contacts = await result.toArray();
-    res.setHeader('Content-Type', 'application/json');
     res.status(200).json(contacts);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-const getSingle = async (req, res) => {
+const getSingleOne = async (req, res) => {
   const { id } = req.query;
 
   if (!id || !ObjectId.isValid(id)) {
@@ -29,7 +28,7 @@ const getSingle = async (req, res) => {
       .findOne({ _id: contactId });
 
     if (!contact) {
-      return res.status(404).json({ message: 'Contact not found' });
+      return res.status(404).json({ message:'Contact is not found' });
     }
 
     return res.status(200).json(contact);
@@ -40,5 +39,5 @@ const getSingle = async (req, res) => {
 
 module.exports = {
   getAll,
-  getSingle,
+  getSingleOne,
 };

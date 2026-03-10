@@ -7,18 +7,15 @@ const initDb = (callback) => {
     return callback(null, database);
   }
 
-  const uri = process.env.MONGODB_URI || process.env.URI;
+  const uri = process.env.URI;
 
   if (!uri) {
-    return callback(
-      new Error('MONGODB_URI (or URI) is not set in environment variables')
-    );
+    return callback(new Error('URI is not set in environment variables'));
   }
 
   MongoClient.connect(uri)
     .then((client) => {
-      const dbName = process.env.MONGODB_DB_NAME || 'cse341';
-      database = client.db(dbName);
+      database = client.db();
       callback(null, database);
     })
     .catch((error) => {
