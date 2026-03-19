@@ -4,9 +4,38 @@ GET http://localhost:3000/
 ### Get all contacts
 GET http://localhost:3000/contacts
 
-### Get single contact by id query parameter
-# Replace CONTACT_ID with a real _id from MongoDB
-GET http://localhost:3000/contacts/single?id=CONTACT_ID
+### Get one contact by id
+GET http://localhost:3000/contacts/CONTACT_ID
+
+### Create contact
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+	"firstName": "Anna",
+	"lastName": "Smith",
+	"email": "anna.smith@email.com",
+	"favoriteColor": "Green",
+	"birthday": "1998-11-20"
+}
+
+### Update contact by id
+PUT http://localhost:3000/contacts/CONTACT_ID
+Content-Type: application/json
+
+{
+	"firstName": "Anna",
+	"lastName": "Brown",
+	"email": "anna.brown@email.com",
+	"favoriteColor": "Purple",
+	"birthday": "1998-11-20"
+}
+
+### Delete contact by id
+DELETE http://localhost:3000/contacts/CONTACT_ID
+
+### Swagger docs
+GET http://localhost:3000/api-docs
 
 ### Render root route (replace with your Render URL)
 GET https://your-render-app.onrender.com/
@@ -14,5 +43,35 @@ GET https://your-render-app.onrender.com/
 ### Render get all contacts
 GET https://your-render-app.onrender.com/contacts
 
-### Render get single contact
-GET https://your-render-app.onrender.com/contacts/single?id=CONTACT_ID
+### Render get one contact
+GET https://your-render-app.onrender.com/contacts/CONTACT_ID
+
+### Render create contact
+POST https://your-render-app.onrender.com/contacts
+Content-Type: application/json
+
+{
+	"firstName": "Anna",
+	"lastName": "Smith",
+	"email": "anna.smith@email.com",
+	"favoriteColor": "Green",
+	"birthday": "1998-11-20"
+}
+
+### Render update contact
+PUT https://your-render-app.onrender.com/contacts/CONTACT_ID
+Content-Type: application/json
+
+{
+	"firstName": "Anna",
+	"lastName": "Brown",
+	"email": "anna.brown@email.com",
+	"favoriteColor": "Purple",
+	"birthday": "1998-11-20"
+}
+
+### Render delete contact
+DELETE https://your-render-app.onrender.com/contacts/CONTACT_ID
+
+### Render swagger docs
+GET https://your-render-app.onrender.com/api-docs
