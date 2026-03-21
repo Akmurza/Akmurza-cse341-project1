@@ -1,3 +1,6 @@
+const renderUrl = process.env.RENDER_URL || 'https://akmurza-cse341-project1.onrender.com';
+const localUrl = process.env.LOCAL_URL || 'http://localhost:3000';
+
 module.exports = {
   openapi: '3.0.0',
   info: {
@@ -7,12 +10,12 @@ module.exports = {
   },
   servers: [
     {
-      url: 'http://localhost:3000',
-      description: 'Local server',
+      url: renderUrl,
+      description: 'Render server',
     },
     {
-      url: 'https://your-render-app.onrender.com',
-      description: 'Render server',
+      url: localUrl,
+      description: 'Local server',
     },
   ],
   paths: {

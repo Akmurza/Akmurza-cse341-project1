@@ -1,11 +1,11 @@
 const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const mongodb = require('./model/database');
 const routes = require('./routes');
 const swaggerDocument = require('./swagger');
-
-dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
